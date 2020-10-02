@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-row align="center" justify="center">
+    <v-row align="center" justify="center" class="board">
       <!-- TODO -->
       <v-row>
         <v-col cols="6" md="4" ma="6">
@@ -22,9 +22,14 @@
                       ></v-list-item-title>
                     </v-card-title>
                     <v-card-actions>
-                      <v-btn class="mx-2" fab small>
-                        <v-icon dark> mdi-pencil </v-icon>
-                      </v-btn>
+                      <div class="actions-container">
+                        <v-btn class="mx-2" x-small top right fab>
+                          <v-icon dark> mdi-pencil </v-icon>
+                        </v-btn>
+                        <v-btn class="mx-2" x-small top right fab>
+                          <v-icon dark> mdi-delete-empty </v-icon>
+                        </v-btn>
+                      </div>
                     </v-card-actions>
                   </v-card>
                 </v-list-item>
@@ -184,16 +189,9 @@ export default {
 </script>
 
 <style scoped>
-/* .list-group-item {
-    margin: 5px;
-    border-radius: 4px;
-  }
-  .list-group-item:hover {
-    background:red;
-  }
-  .list-group-item:active {
-    background: yellow;
-  } */
+.board {
+  padding: 25px 5%;
+}
 .itemCard {
   width: 100%;
   margin-bottom: 5%;
@@ -204,5 +202,9 @@ export default {
 }
 .itemCardTitleTodo {
   border-top: 5px solid #9c27b0;
+}
+.actions-container {
+  padding-left: 70%;
+  padding-bottom: 3%;
 }
 </style>
